@@ -13,7 +13,7 @@ const SITE_URL = "https://www.hobbylobbydiscounts.com"
 const SITE_NAME = "Hobby Lobby Discounts"
 const TITLE = "The Hobby Lobby Discounts They Don't Advertise"
 const DESCRIPTION =
-  "Discover how shoppers are unlocking hidden discount codes on fabric and sewing, yarn and needle art, floral and home decor, and art supplies. Complete 5+ deals in five simple steps and get your discount delivered straight to your inbox."
+  "Discover how shoppers are unlocking hidden discount codes on fall and harvest decor, Halloween decor, autumn florals and wreaths, and costumes and party supplies. Complete 5+ deals in five simple steps and get your discount delivered straight to your inbox."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -25,11 +25,12 @@ export const metadata: Metadata = {
     "Hobby Lobby promo code",
     "Hobby Lobby discounts",
     "Hobby Lobby coupons",
-    "Hobby Lobby rewards program",
-    "fabric and sewing deals",
-    "yarn and needle art deals",
-    "floral and home decor deals",
-    "art supplies and framing deals",
+    "Hobby Lobby Halloween discounts",
+    "Hobby Lobby fall decor deals",
+    "fall and harvest decor deals",
+    "Halloween decor deals",
+    "autumn florals and wreath deals",
+    "costume and party supply deals",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1536,
         height: 1024,
-        alt: "Folded stacks of quilting fabric with a thread spool, skeins of yarn with knitting needles, artificial floral stems in a vase, and paint brushes beside a blank canvas arranged on a vivid orange-red and dark brown background",
+        alt: "Small pumpkins and a gourd, a grapevine wreath with autumn maple leaves and berry picks, a white ceramic ghost and black cat decoration, and a black trick-or-treat pail arranged on a vivid orange-red and dark brown background",
       },
     ],
   },

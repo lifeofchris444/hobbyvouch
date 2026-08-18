@@ -34,37 +34,38 @@ const STEPS = [
   },
 ]
 
-const FABRIC_ICON = "M7 4h10v16H7z M7 8h10 M7 16h10 M10.5 8v8 M13.5 8v8"
+const PUMPKIN_ICON =
+  "M12 7.4c-4 0-6.4 2.7-6.4 6.2 0 3.5 2.4 6.2 6.4 6.2s6.4-2.7 6.4-6.2c0-3.5-2.4-6.2-6.4-6.2z M12 7.6v11.9 M9.1 8.1c-1.3 2.4-1.3 8.4 0 10.8 M14.9 8.1c1.3 2.4 1.3 8.4 0 10.8 M12 7.4c0-2 1.1-3.4 3-3.9"
 
-const YARN_ICON =
-  "M12 3a9 9 0 100 18 9 9 0 000-18z M6 6.6c3.6 1.6 8 5.6 9.6 10.8 M9.4 3.4c2.4 3 5.8 6 8.4 8.2 M4 12.4c3 .9 6.4 3.5 8 7 M19.6 15.4l2.2 3.2a2 2 0 01-2.9 2.6"
+const GHOST_ICON =
+  "M5.8 21V11.4a6.2 6.2 0 0112.4 0V21l-2.1-1.9-2.1 1.9-2.1-1.9-2.1 1.9L5.8 21z M9.9 11.2h.01 M14.1 11.2h.01"
 
-const FLORAL_ICON =
-  "M12 21.5v-7.4 M12 14.1c-2.9 0-4.7-1.8-4.7-3.8 0-1.5 1.1-2.5 2.4-2.5 1.1 0 1.9.6 2.3 1.4.4-.8 1.2-1.4 2.3-1.4 1.3 0 2.4 1 2.4 2.5 0 2-1.8 3.8-4.7 3.8z M8.8 18.6c-2.1 0-3.7-1.1-3.7-2.6 M15.2 18.6c2.1 0 3.7-1.1 3.7-2.6"
+const LEAF_ICON =
+  "M4.6 19.4C4.6 11 10.4 4.9 19.4 4.6c.3 9-5.8 14.8-14.2 14.8z M4.6 19.4c3.6-3.6 7.2-7.2 10.8-10.8 M11.6 12.4l-.6-4 M12.4 11.6l4 .6"
 
-const ART_ICON =
-  "M4 20.6c0-2.1 1.3-3.4 3.1-3.4 1.5 0 2.5 1 2.5 2.4 0 1.3-1 2.1-2.2 2.1H4z M9.6 18.7L19 9.3a2.3 2.3 0 00-3.2-3.2L6.4 15.5 M14.6 7.4l2.2 2.2"
+const CANDY_ICON =
+  "M12 8.2a3.8 3.8 0 100 7.6 3.8 3.8 0 000-7.6z M8.4 10.4L4.2 7.5v9l4.2-2.9 M15.6 10.4l4.2-2.9v9l-4.2-2.9"
 
 const CATEGORIES = [
   {
-    t: "Fabric & Sewing",
-    d: "Quilting cottons, fleece, patterns, thread, and sewing notions.",
-    icon: FABRIC_ICON,
+    t: "Fall & Harvest Decor",
+    d: "Pumpkins, gourds, cornstalks, lanterns, and harvest table centerpieces.",
+    icon: PUMPKIN_ICON,
   },
   {
-    t: "Yarn & Needle Art",
-    d: "Yarn by the skein, crochet hooks, knitting needles, and starter kits.",
-    icon: YARN_ICON,
+    t: "Halloween Decor",
+    d: "Skeletons, ghosts, spiderwebs, tombstones, and animated yard props.",
+    icon: GHOST_ICON,
   },
   {
-    t: "Floral & Home Decor",
-    d: "Stems, wreaths, vases, wall art, and seasonal decorations.",
-    icon: FLORAL_ICON,
+    t: "Autumn Florals & Wreaths",
+    d: "Maple stems, berry picks, grapevine wreaths, and door hangers.",
+    icon: LEAF_ICON,
   },
   {
-    t: "Art Supplies & Framing",
-    d: "Paints, brushes, canvas, sketchbooks, and custom frames.",
-    icon: ART_ICON,
+    t: "Costumes & Party Supplies",
+    d: "Trick-or-treat pails, costume fabric, tableware, and party favors.",
+    icon: CANDY_ICON,
   },
 ]
 
@@ -257,13 +258,13 @@ export default function HobbyLobbyRewardLander() {
         <div className="orb w-96 h-96 -top-24 -left-24" style={{ backgroundColor: "#F9AE93" }} />
         <div className="orb w-80 h-80 top-1/3 -right-20" style={{ backgroundColor: "#2A0C04", animationDelay: "-6s" }} />
         <div className="drifter left-[8%] top-[30%]">
-          <Icon d={YARN_ICON} color="#fff" className="w-9 h-9" />
+          <Icon d={PUMPKIN_ICON} color="#fff" className="w-9 h-9" />
         </div>
         <div className="drifter right-[10%] top-[18%]" style={{ animationDelay: "-3s" }}>
-          <Icon d={ART_ICON} color="#fff" className="w-8 h-8" />
+          <Icon d={GHOST_ICON} color="#fff" className="w-8 h-8" />
         </div>
         <div className="drifter left-[16%] bottom-[12%]" style={{ animationDelay: "-5s" }}>
-          <Icon d={FABRIC_ICON} color="#fff" className="w-8 h-8" />
+          <Icon d={LEAF_ICON} color="#fff" className="w-8 h-8" />
         </div>
 
         <div className="relative mx-auto max-w-3xl px-6 pt-12 pb-20 md:pt-20 md:pb-24 text-center">
@@ -276,8 +277,8 @@ export default function HobbyLobbyRewardLander() {
               {"The Hobby Lobby Discounts They Don't Advertise"}
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/85 max-w-xl mx-auto leading-relaxed text-pretty">
-              Discover how shoppers are unlocking hidden discount codes on fabric and sewing, yarn and needle art, floral
-              and home decor, and art supplies.
+              Discover how shoppers are unlocking hidden discount codes on fall and harvest decor, Halloween decor,
+              autumn florals and wreaths, and costumes and party supplies.
             </p>
             <div className="mt-9 flex items-center justify-center gap-x-5 gap-y-9 flex-wrap">
               <CTAButton large>Apply Now</CTAButton>
@@ -340,7 +341,7 @@ export default function HobbyLobbyRewardLander() {
               Unlock rewards
             </div>
             <h2 className="mt-3 font-black tracking-tight text-3xl md:text-5xl text-balance">
-              What You Can Do With Your Discount
+              What Your Fall &amp; Halloween Discount Covers
             </h2>
           </div>
 
@@ -468,7 +469,7 @@ export default function HobbyLobbyRewardLander() {
               Applications Open
             </span>
             <h2 className="mt-6 font-black tracking-tight text-4xl md:text-6xl leading-[1.05] text-balance">
-              Ready to Start Saving?
+              Ready to Decorate for Less?
             </h2>
             <p className="mt-4 text-white/85 text-lg max-w-xl mx-auto leading-relaxed text-pretty">
               Join thousands of shoppers who have already claimed their discount code. Your savings are just a few clicks
