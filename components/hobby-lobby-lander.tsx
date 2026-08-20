@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 
 const AFFILIATE_LINK = "https://trksy.org/aff_c?offer_id=5034&aff_id=26188"
 
@@ -84,10 +83,16 @@ const FAQS = [
   },
 ]
 
+// Avatars are pre-sized to 160x160 WebP (~5KB each) and rendered with a plain <img>.
+// Do NOT swap these for full-resolution PNGs or next/image: multi-megabyte sources routed
+// through the deployed image optimizer are what made these silently break in production.
 const AVATARS = [
-  { src: "/avatars/hobby-shopper-1.png", alt: "Smiling woman in her thirties with long auburn hair in a denim shirt" },
-  { src: "/avatars/hobby-shopper-2.png", alt: "Smiling Black woman in her fifties with short gray natural hair" },
-  { src: "/avatars/hobby-shopper-3.png", alt: "Smiling young Latina woman with dark wavy hair in a rust sweater" },
+  {
+    src: "/avatars/hobby-shopper-1.webp",
+    alt: "Smiling woman in her thirties with auburn hair in a denim shirt",
+  },
+  { src: "/avatars/hobby-shopper-2.webp", alt: "Smiling Black woman in her fifties with short gray natural curls" },
+  { src: "/avatars/hobby-shopper-3.webp", alt: "Smiling Latina woman in her twenties with dark wavy hair" },
 ]
 
 function Icon({ d, className = "w-6 h-6", color = HOBBY }: { d: string; className?: string; color?: string }) {
@@ -236,7 +241,7 @@ export default function HobbyLobbyRewardLander() {
 
         .t-card { transition: transform .25s cubic-bezier(.16,1,.3,1), border-color .25s ease, box-shadow .25s ease; }
         .t-card:hover { transform: translateY(-6px); border-color: rgba(239,68,22,.4); box-shadow: 0 18px 44px rgba(239,68,22,.14); }
-          .t-rail-fill { background: linear-gradient(180deg, #FF8A5C, #EF4416); }
+        .t-rail-fill { background: linear-gradient(180deg, #FF8A5C, #EF4416); }
 
         .spark { position: absolute; bottom: -12px; border-radius: 9999px; background: rgba(255,255,255,.75); animation: sparkRise linear infinite; }
         @keyframes sparkRise {
@@ -285,14 +290,21 @@ export default function HobbyLobbyRewardLander() {
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   {AVATARS.map((a) => (
-                    <Image
+                    <span
                       key={a.src}
-                      src={a.src || "/placeholder.svg"}
-                      alt={a.alt}
-                      width={72}
-                      height={72}
-                      className="w-9 h-9 rounded-full border-2 border-white/60 object-cover"
-                    />
+                      className="block w-9 h-9 rounded-full border-2 border-white/60 overflow-hidden shrink-0"
+                      style={{ backgroundColor: HOBBY_BRIGHT }}
+                    >
+                      <img
+                        src={a.src || "/placeholder.svg"}
+                        alt={a.alt}
+                        width={160}
+                        height={160}
+                        loading="eager"
+                        decoding="async"
+                        className="w-full h-full object-cover text-transparent"
+                      />
+                    </span>
                   ))}
                 </div>
                 <span className="text-white/80 text-sm leading-tight max-w-[200px] text-left">
